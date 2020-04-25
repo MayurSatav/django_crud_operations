@@ -1,0 +1,47 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+<div class="small_div">
+<div class="container">
+    <br>
+    <h2>Invoices List</h2>
+    <hr>
+    
+    <form action="/create">
+            <label class="form-group" for="issuer">issuer: </label>
+            <input class="form-control" type="text" name="issuer"><br>
+
+            <label class="form-group" for="invoice_number">invoice_number: </label>
+            <input class="form-control" type="text" name="invoice_number"><br>
+
+            <label class="form-group" for="date">date: </label>
+            <input class="form-control" type="text" name="date"><br>
+
+            <label class="form-group" for="amount">amount: </label>
+            <input class="form-control" type="text" name="amount"><br>
+
+            <label class="form-group" for="currency">currency: </label>
+            <input class="form-control" type="text" name="currency"><br>
+
+            <label class="form-group" for="other">other: </label>
+            <input class="form-control" type="text" name="other"><br>
+
+            <input class="btn btn-success" type="submit" value="save">
+
+        </form>
+        <br>
+</div>
+</div>
+
+</body>
+</html>

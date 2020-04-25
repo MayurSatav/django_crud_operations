@@ -1,0 +1,56 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+
+<div class="small_div">
+
+<div class="container">
+    <br>
+    <h2>invoices List</h2>
+    <hr>
+
+    <form action="/update/{{ invoices.id }}">
+
+        {% csrf_token %}
+
+        <label class="form-group" for="issuer">issuer: </label>
+        <input class="form-control" type="text" name="issuer" value="{{ invoices.issuer }}" placeholder="{{ invoices.issuer }}">
+
+        <label class="form-group" for="invoice_number">invoice_number: </label>
+        <input class="form-control" type="text" name="invoice_number" value="{{ invoices.invoice_number }}" placeholder="{{ invoices.invoice_number }}">
+
+        <label class="form-group" for="date">date: </label>
+        <input class="form-control" type="text" name="date" value="{{ invoices.date }}" placeholder="{{ invoices.date }}">
+
+        <label class="form-group" for="amount">amount: </label>
+        <input class="form-control" type="text" name="amount" value="{{ invoices.amount }}" placeholder="{{ invoices.amount }}">
+
+        <label class="form-group" for="currency">currency: </label>
+        <input class="form-control" type="text" name="currency" value="{{ invoices.currency }}" placeholder="{{ invoices.currency }}">
+
+        <label class="form-group" for="other">other: </label>
+        <input class="form-control" type="text" name="other" value="{{ invoices.other }}" placeholder="{{ invoices.other }}">
+        <br>
+
+        <input class="btn btn-primary" type="submit" value="Update">
+
+    </form>
+
+
+</div>
+</div>
+
+</body>
+</html>

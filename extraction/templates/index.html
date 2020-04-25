@@ -1,0 +1,54 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+</head>
+<body>
+
+    <div class="container"><br>
+        <h2>Invoices List</h2>
+        <hr>
+
+        <table class="table table-dark">
+            <thead>
+                <tr>
+                    <th>issuer</th>
+                    <th>invoice_number</th>
+                    <th>date</th>
+                    <th>amount</th>
+                    <th>currency</th>
+                    <th>other</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for invoice in invoices %}
+
+                    <tr>
+                        <td>{{ invoice.issuer }}</td>
+                        <td>{{ invoice.invoice_number }}</td>
+                        <td>{{ invoice.date }}</td>
+                        <td>{{ invoice.amount }}</td>
+                        <td>{{ invoice.currency }}</td>
+                        <td>{{ invoice.other }}</td>
+                        <td><a class="btn btn-info" href="/edit/{{ invoice.id }}">Edit</a>
+                            <a class="btn btn-danger" href="/delete/{{ invoice.id }}">Delete</a>
+                        </td>
+                    </tr>
+
+                {% endfor %}
+
+            </tbody>
+        </table>
+        <a class="btn btn-primary" href="/add_invoice/">Add invoice</a>
+    </div>
+
+</body>
+</html>
